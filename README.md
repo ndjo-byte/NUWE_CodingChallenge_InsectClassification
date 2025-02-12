@@ -19,23 +19,23 @@ Biodiversity conservation is crucial, and insects play a vital role in maintaini
 
 The dataset consists of two files:
 
-📌 train.csv – Contains sensor readings and corresponding insect categories.
+📌 train.csv – Contains sensor readings and corresponding insect categories.  
 📌 test.csv – Includes sensor data without labels (for model predictions).
 
 ### Features:
 
-Sensor_alpha, Sensor_beta, Sensor_gamma: Continuous environmental sensor readings.
-Hour, Minutes: Time variables for when the measurements were taken.
-Insect: Categorical label (only present in the training set).
+Sensor_alpha, Sensor_beta, Sensor_gamma: Continuous environmental sensor readings.  
+Hour, Minutes: Time variables for when the measurements were taken.  
+Insect: Categorical label (only present in the training set).  
 
 ⚠️ Important: Time is a cyclic feature! Since machine learning models don’t naturally understand cyclical patterns, I transformed time features using sine and cosine functions in #NumPy to improve generalization. 🔄
 
 ## 📊 Data Processing
 
-To ensure optimal model performance, I applied:
-✅ Feature scaling for continuous sensor values.
-✅ Time encoding using sine and cosine transformations.
-✅ Data cleaning and preprocessing.
+To ensure optimal model performance, I applied:  
+✅ Feature scaling for continuous sensor values.  
+✅ Time encoding using sine and cosine transformations.  
+✅ Data cleaning and preprocessing.  
 
 ## 🤖 Model
 
@@ -45,35 +45,35 @@ Final model selection was based on F1 Score, ensuring a balance between precisio
 
 ## 📂 Repository Structure
 
-|__ README.md
-|__ requirements.txt
-|
-|__ data
-|  |__ train.csv
-|  |__ test.csv
-|
-|__ src
-|  |__ data_processing.py
-|  |__ model_training.py
-|  |__ model_prediction.py
-|  |__ utils.py
-|
-|__ models
-|  |__ model.pkl
-|
-|__ scripts
-|  |__ run_pipeline.sh
-|
-|__ predictions
-   |__ example_predictions.json
-   |__ predictions.json
+|__ README.md  
+|__ requirements.txt  
+|  
+|__ data  
+|  |__ train.csv  
+|  |__ test.csv  
+|  
+|__ src  
+|  |__ data_processing.py  
+|  |__ model_training.py  
+|  |__ model_prediction.py  
+|  |__ utils.py  
+|  
+|__ models  
+|  |__ model.pkl  
+|  
+|__ scripts  
+|  |__ run_pipeline.sh  
+|  
+|__ predictions  
+   |__ example_predictions.json  
+   |__ predictions.json  
 
 ## 🔹 Key Components:
 
-📌 src/ – Contains scripts for data preprocessing, model training, and predictions.
-📌 models/ – Stores the trained classification model.
-📌 scripts/ – Includes run_pipeline.sh, an automation script for workflow execution.
-📌 predictions/ – Stores output predictions in JSON format.
+📌 src/ – Contains scripts for data preprocessing, model training, and predictions.  
+📌 models/ – Stores the trained classification model.  
+📌 scripts/ – Includes run_pipeline.sh, an automation script for workflow execution.  
+📌 predictions/ – Stores output predictions in JSON format.  
 
 💡 Automation Tip: I used .sh scripts to streamline the workflow! This was a great learning experience in modularizing ML pipelines. 🛠️
 
@@ -83,30 +83,31 @@ Final model selection was based on F1 Score, ensuring a balance between precisio
 ✔️ Task 2: Format predictions correctly in predictions.json:
 
 {
-    "target": {
-        "1": 0,
-        "2": 3,
-        "3": 8,
-        "4": 5,
-        "5": 2
-    }
-}
+    "target": {  
+        "1": 0,  
+        "2": 3,  
+        "3": 8,  
+        "4": 5,  
+        "5": 2  
+    }  
+}  
 
 ## 📊 Evaluation
 
-📌 Metric: F1 Score – A balanced measure of precision and recall.
-📌 Goal: Achieve the highest F1 Score for accurate insect classification.
+📌 Metric: F1 Score – A balanced measure of precision and recall.  
+📌 Goal: Achieve the highest F1 Score for accurate insect classification.  
 
 ## ✅ Best practices:
 
-Feature engineering for better generalization.
-Experimenting with different ML models.
-Fine-tuning hyperparameters for optimal performance.
-📤 Submission
+Feature engineering for better generalization.  
+Experimenting with different ML models.  
+Fine-tuning hyperparameters for optimal performance.  
+
+## 📤 Submission
 
 The final submission consists of:
-📌 Trained model: model.pkl
-📌 Predictions: predictions.json
+📌 Trained model: model.pkl  
+📌 Predictions: predictions.json  
 
 ## ❓ FAQs
 
